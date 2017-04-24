@@ -1,0 +1,18 @@
+type: "MARKDOWN_NOTE"
+folder: "954f8fb26785a46e6466"
+title: "List Tags in Repository V1"
+content: '''
+  # List Tags in Repository V1
+  API calls with the GET method
+  
+  ## V1
+  
+  ## List Tags in Repository
+  ``` bash
+  curl -H 'Accept: application/json' -H 'Authorization: Basic (Base64Auth)' https://index.docker.io/v1/repositories/<namespace>/<repo>/tags
+  ```
+'''
+tags: []
+isStarred: false
+createdAt: "2017-04-24T05:56:33.181Z"
+updatedAt: "2017-04-24T05:57:09.520Z"

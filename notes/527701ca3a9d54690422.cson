@@ -1,0 +1,18 @@
+type: "MARKDOWN_NOTE"
+folder: "9edc11a79a2c560b4f85"
+title: "Jenkins Security"
+content: '''
+  # Jenkins Security
+  ## enable API read for jobs
+  Jenkins -> Configure Global Security
+  User Anounymous check -> Overall/read, Job/read
+  
+  ## enable API build jobs
+  Jenkins -> Configure Global Security
+  User Anonymous -> Overall/read, Job/read, Job/build, Agent/build
+  
+'''
+tags: []
+isStarred: false
+createdAt: "2017-04-24T05:55:47.346Z"
+updatedAt: "2017-04-24T05:55:49.506Z"

@@ -1,0 +1,31 @@
+type: "MARKDOWN_NOTE"
+folder: "e8c7c1d44f15bb1b4e2d"
+title: "SH"
+content: '''
+  # SH
+  Bourn Shell script related Tips and Tricks
+  
+  ## Conditionals
+  Inside an if conditional the equality operator is a single equal sign
+  ``` sh
+  if [ "$var" = "str" ]; then
+      echo "equal"
+  fi
+  ```
+  
+  ## Loops
+  
+  ### Until
+  ``` sh
+  res=-1
+  until [ res == 0 ]
+  do
+    command
+    res=$?
+  done
+  ```
+'''
+tags: []
+isStarred: false
+createdAt: "2017-04-24T05:55:06.566Z"
+updatedAt: "2017-04-24T05:55:16.050Z"

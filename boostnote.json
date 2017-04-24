@@ -1,0 +1,25 @@
+{
+  "folders": [
+    {
+      "key": "e8c7c1d44f15bb1b4e2d",
+      "color": "#2BA5F7",
+      "name": "Bash"
+    },
+    {
+      "key": "9edc11a79a2c560b4f85",
+      "color": "#30D5C8",
+      "name": "Jenkins"
+    },
+    {
+      "key": "d07cfc5475ceeba8cc0b",
+      "color": "#B013A4",
+      "name": "Linux"
+    },
+    {
+      "key": "954f8fb26785a46e6466",
+      "color": "#E10051",
+      "name": "Docker Hub"
+    }
+  ],
+  "version": "1.0"
+}
