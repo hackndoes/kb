@@ -1,0 +1,16 @@
+type: "MARKDOWN_NOTE"
+folder: "cf7fc88a6d56cdda7e97"
+title: "pip"
+content: '''
+  # pip
+  
+  ### export all packages from pip
+  pip freeze > requirements.txt
+  
+  ### reinstall list of requirement packages
+  pip install -r requirements.txt
+'''
+tags: []
+isStarred: false
+createdAt: "2017-04-24T08:06:27.495Z"
+updatedAt: "2017-04-24T08:07:19.017Z"

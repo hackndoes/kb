@@ -1,0 +1,30 @@
+type: "MARKDOWN_NOTE"
+folder: "cf7fc88a6d56cdda7e97"
+title: "Set Up Virtual Environment"
+content: '''
+  # Set Up Virtual Environment
+  
+  ### Install
+  ```sh
+  pip install virtualenv
+  ```
+  
+  ### Create Environment for Current Project Under folder virtenv
+  ```sh
+  virtualenv -p <python_executable_path> virtenv
+  ```
+  
+  ### Activate The virtual Environment
+  ```sh
+  source virtenv/bin/activate
+  ```
+  
+  ### To deactivate and return to global python configuration
+  ```sh
+  deactivate
+  ```
+'''
+tags: []
+isStarred: false
+createdAt: "2017-04-24T08:00:28.987Z"
+updatedAt: "2017-04-24T08:03:45.309Z"

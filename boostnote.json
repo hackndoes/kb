@@ -19,6 +19,21 @@
       "key": "954f8fb26785a46e6466",
       "color": "#E10051",
       "name": "Docker Hub"
+    },
+    {
+      "key": "cf7fc88a6d56cdda7e97",
+      "color": "#E8D252",
+      "name": "Python"
+    },
+    {
+      "key": "cd055e59887e8054d07d",
+      "color": "#2BA5F7",
+      "name": "SSH"
+    },
+    {
+      "key": "85e4d71ba0971e1afcc2",
+      "color": "#E10051",
+      "name": "Ansible"
     }
   ],
   "version": "1.0"

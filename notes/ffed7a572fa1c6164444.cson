@@ -1,0 +1,53 @@
+type: "SNIPPET_NOTE"
+folder: "cd055e59887e8054d07d"
+title: "Uninstall docker-toolbox"
+description: "Uninstall docker-toolbox"
+snippets: [
+  {
+    name: "uninstall_docker_toolbox.sh"
+    mode: "Shell"
+    content: '''
+      #!/bin/bash
+      
+      # Uninstall Script
+      
+      if [ "${USER}" != "root" ]; then
+      	echo "$0 must be run as root!"
+      	exit 2
+      fi
+      
+      while true; do
+        read -p "Remove all Docker Machine VMs? (Y/N): " yn
+        case $yn in
+          [Yy]* ) docker-machine rm -f $(docker-machine ls -q); break;;
+          [Nn]* ) break;;
+          * ) echo "Please answer yes or no."; exit 1;;
+        esac
+      done
+      
+      echo "Removing Applications..."
+      rm -rf /Applications/Docker
+      
+      echo "Removing docker binaries..."
+      rm -f /usr/local/bin/docker
+      rm -f /usr/local/bin/docker-machine
+      rm -r /usr/local/bin/docker-machine-driver*
+      rm -f /usr/local/bin/docker-compose
+      
+      echo "Removing boot2docker.iso"
+      rm -rf /usr/local/share/boot2docker
+      
+      echo "Forget packages"
+      pkgutil --forget io.docker.pkg.docker
+      pkgutil --forget io.docker.pkg.dockercompose
+      pkgutil --forget io.docker.pkg.dockermachine
+      pkgutil --forget io.boot2dockeriso.pkg.boot2dockeriso
+      
+      echo "All Done!"
+    '''
+  }
+]
+tags: []
+isStarred: false
+createdAt: "2017-04-25T05:42:41.692Z"
+updatedAt: "2017-04-25T05:43:18.143Z"
