@@ -1,0 +1,14 @@
+type: "MARKDOWN_NOTE"
+folder: "e8c7c1d44f15bb1b4e2d"
+title: "Remove new line characters from files"
+content: '''
+  # Remove new line characters from files
+  ```bash
+  tr -d '\\n' < filename.ext
+  ```
+  
+'''
+tags: []
+isStarred: false
+createdAt: "2017-05-29T05:32:37.662Z"
+updatedAt: "2017-05-29T05:33:54.346Z"

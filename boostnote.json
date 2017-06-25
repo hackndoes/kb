@@ -34,6 +34,26 @@
       "key": "85e4d71ba0971e1afcc2",
       "color": "#E10051",
       "name": "Ansible"
+    },
+    {
+      "key": "eba130af7603566be983",
+      "color": "#E10051",
+      "name": "SSL"
+    },
+    {
+      "key": "eecc56f48777f490ca3a",
+      "color": "#3FD941",
+      "name": "Python"
+    },
+    {
+      "key": "9645f2b0792909e1af73",
+      "color": "#30D5C8",
+      "name": "Go"
+    },
+    {
+      "key": "de772fc9c61061b43fe3",
+      "color": "#3FD941",
+      "name": "Git"
     }
   ],
   "version": "1.0"

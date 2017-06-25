@@ -1,0 +1,22 @@
+type: "MARKDOWN_NOTE"
+folder: "85e4d71ba0971e1afcc2"
+title: "append string to list of values"
+content: '''
+  append string to list of values
+  
+  ```python
+  - set_fact:
+      file_list: []
+  
+  - set_fact:
+      file_list: "{{ file_list }} + [ '{{ item.path|basename|splitext|first }}' ]"
+    with_items: "{{ cert_files.files }}"
+  
+  - debug: var=file_list
+  
+  ```
+'''
+tags: []
+isStarred: false
+createdAt: "2017-04-30T06:58:42.376Z"
+updatedAt: "2017-04-30T06:59:15.261Z"

@@ -1,0 +1,18 @@
+type: "MARKDOWN_NOTE"
+folder: "eecc56f48777f490ca3a"
+title: "JSON Pretty Printing from CLI"
+content: '''
+  ### JSON Pretty Printing from CLI
+  
+  ```bash
+  python -m json.tool json_file_path.json
+  ```
+  OR
+  ```bash
+  cat json_file_path.json | python -m json.tool
+  ```
+'''
+tags: []
+isStarred: false
+createdAt: "2017-05-28T06:12:27.113Z"
+updatedAt: "2017-05-28T06:13:28.539Z"

@@ -1,0 +1,25 @@
+type: "MARKDOWN_NOTE"
+folder: "85e4d71ba0971e1afcc2"
+title: "Reference a variable in a task using a dynamically constructed name"
+content: '''
+  # Reference a variable in a task using a dynamically constructed name
+  
+  ## Use the global play bound vars object with brackets
+  ```python
+  vars[var+'_'+name]
+  ```
+  
+  ```yaml
+  - set_fact: {"{{ (item.name+'_instances')|replace('-', '_') }}": "{% for result in ec2_instances.results %}{% for tagged in result.tagged_instances %}{% if item.name in tagged.tags.roles.split(',') %}{{ tagged.id }} {% endif %}{% endfor %}{% endfor %}"}
+    with_items: '{{ load_balanced_roles }}'
+    
+  - name: do something
+    with_items: '{{ load_balanced_roles }}'
+    module_name:
+      instance_ids: "{{ vars[item.name.replace('-', '_') +'_instances'].strip().split(' ') }}"
+  ```
+'''
+tags: []
+isStarred: false
+createdAt: "2017-05-09T11:12:06.226Z"
+updatedAt: "2017-05-09T11:17:53.787Z"

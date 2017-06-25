@@ -1,0 +1,26 @@
+type: "MARKDOWN_NOTE"
+folder: "85e4d71ba0971e1afcc2"
+title: "Use item in when query nested variable expension"
+content: '''
+  # Use item in when query nested variable expension
+  
+  ## Bad: the item.lb_subnet_name is surrounded with {{}}
+  ```yaml
+  - debug: msg="{{ (vpc_subnet.results|selectattr('subnet.tags.net', 'equalto', {{ item.lb_subnet_name }})|first).subnet.id }}"
+    with_items: '{{ load_balanced_roles }}'
+  ```
+  ## Bad: the item.lb_subnet_name is surrounded with ""
+  ```yaml
+  - debug: msg="{{ (vpc_subnet.results|selectattr('subnet.tags.net', 'equalto', 'item.lb_subnet_name')|first).subnet.id }}"
+    with_items: '{{ load_balanced_roles }}'
+  ```
+  ## Good: just use item.lb_subnet_name
+  ```yaml
+  - debug: msg="{{ (vpc_subnet.results|selectattr('subnet.tags.net', 'equalto', item.lb_subnet_name)|first).subnet.id }}"
+    with_items: '{{ load_balanced_roles }}'
+  ```
+'''
+tags: []
+isStarred: false
+createdAt: "2017-05-09T04:20:41.171Z"
+updatedAt: "2017-06-25T05:49:18.490Z"

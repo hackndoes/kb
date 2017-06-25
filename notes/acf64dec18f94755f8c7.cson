@@ -1,0 +1,33 @@
+type: "MARKDOWN_NOTE"
+folder: "85e4d71ba0971e1afcc2"
+title: "Remove unwanted files from remote host"
+content: '''
+  # Remove unwanted files from remote host
+  
+  ```python
+  - set_fact:
+      wanted_file_base_names:
+        - first.file.name
+        - second.file.name
+  
+  - name: find all exiting files in the host directory
+    register: all_files
+    find:
+      paths: "{{ host_dir_path }}"
+      
+  # each file in all_files.files has a path attribute with the full path
+  # and we filter by the basename of a file only
+  - name: "Remove all unwanted files from {{ host_dir_path }}"
+    with_items: "{{ all_files.files }}"
+    # take only the file name and strip the extention to match values from
+    # wanted_file_base_names list exactly.
+    when: item.path|basename|splitext|first not in wanted_file_base_names
+    file:
+      path: "{{ item.path }}"
+      state: absent
+  ```
+'''
+tags: []
+isStarred: false
+createdAt: "2017-04-30T07:27:46.525Z"
+updatedAt: "2017-05-07T06:15:26.190Z"

@@ -1,0 +1,19 @@
+type: "MARKDOWN_NOTE"
+folder: "e8c7c1d44f15bb1b4e2d"
+title: "Ternary Operator"
+content: '''
+  # Ternary Operator
+  
+  ## SRC: [ how to if correctly in bash](http://stackoverflow.com/questions/669452/is-preferable-over-in-bash-scripts)
+  ```sh
+  DEBUG_STRING=$([ "$DEBUG" = "yes" ] && echo "-vvv" || echo "")
+  ```
+  
+  ```bash
+  DEBUG_STRING=$([[ "$DEBUG" == "yes" ]] && echo "-vvv" || echo "")
+  ```
+'''
+tags: []
+isStarred: false
+createdAt: "2017-05-18T07:53:54.802Z"
+updatedAt: "2017-05-18T07:55:17.706Z"

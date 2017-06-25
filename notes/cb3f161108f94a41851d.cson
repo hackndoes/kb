@@ -1,0 +1,46 @@
+type: "MARKDOWN_NOTE"
+folder: "85e4d71ba0971e1afcc2"
+title: "Render same template with list of items generating multiple files each per item values"
+content: '''
+  # Render same template with list of items generating multiple files each per item values
+  
+  ## variable file
+  ```python
+  rules:
+    - name: example_rule
+      type: frequency
+      index: logstash-*
+      num_events: 1000
+      timeframe:
+        hours: 4
+      filters:
+        - type: term
+          content:
+            key: containerName
+            value: "logstash"
+  ```
+  
+  ## template file
+  ```python
+  es_host: "{{ elasticsearch_host }}"
+  es_port: {{ elasticsearch_port }}
+  type: frequency
+  name: {{ item.name }}
+  index: {{ item.index }}
+  num_events: {{ item.num_events }}
+  timeframe:
+      {{ item.timeframe | to_nice_yaml }}
+  {% for fltr in item.filters %}
+  filter:
+    - {{ fltr.type }}:
+          {{ fltr.content.key }}:{{ fltr.content.value }}
+  {% endfor %}
+  ```
+  
+  ## Small Tip
+  To get a dictionary from var to template use the to_nice_yaml filter!!!
+'''
+tags: []
+isStarred: false
+createdAt: "2017-05-04T12:22:16.540Z"
+updatedAt: "2017-05-07T06:19:48.969Z"

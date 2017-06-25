@@ -1,0 +1,20 @@
+type: "MARKDOWN_NOTE"
+folder: "85e4d71ba0971e1afcc2"
+title: "Operate on list of files from controller"
+content: '''
+  # Operate on list of files from controller
+  
+  ## will run the template module where the source will be each time another file from the rules folder
+  ```yaml
+   - name: "Copy rules"
+     with_fileglob:
+       - "rules/*"
+     template:
+       src: "{{ item }}"
+       dest: "{{ elastalert_home }}/rules/{{ item | basename | splitext | first }}"
+  ```
+'''
+tags: []
+isStarred: false
+createdAt: "2017-05-07T06:15:30.197Z"
+updatedAt: "2017-05-07T06:17:24.799Z"
