@@ -12,4 +12,4 @@
    2. have configured .aws/credentials in the ubuntu user's home directory 
 9. Install ansible version 2.2.1.0 on the slaves but for the python 2.7
     pip2 install ansible==2.2.1.0
-10. Add slave SSH to known_hosts file on master for jenkins user
+10. Add slave SSH to known_hosts file on master for jenkins user`

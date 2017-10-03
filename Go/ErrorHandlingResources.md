@@ -1,0 +1,6 @@
+# Links to Proper Error handling in Go (idiomatic)
+[link 1](https://blog.golang.org/error-handling-and-go)
+[link 2](https://www.goinggo.net/2014/10/error-handling-in-go-part-i.html)
+[link 3](https://www.goinggo.net/2014/11/error-handling-in-go-part-ii.html)
+[link 4](https://golang.org/ref/spec#Errors)
+[link 5](https://golang.org/doc/effective_go.html#errors)

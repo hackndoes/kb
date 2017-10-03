@@ -1,34 +1,27 @@
-# Render same template with list of items generating multiple files each per item values
-### variable file
-```python
-rules:
-  - name: example_rule
-    type: frequency
-    index: logstash-*
-    num_events: 1000
-    timeframe:
-      hours: 4
-    filters:
-      - type: term
-        content:
-          key: containerName
-          value: "logstash"
+# Filter on output from STDOUT structured with Yaml after returned as JSON
+
+## structure cmd_out text into an Ansible object and filter on that
+
+<span style="color:yellow">__**Tip: in when statement you can use all jinja filters only drop the {{}} its a given**__</span>
+```yaml
+# return all tags for specific elasticache instance/cluster
+- name: List tags for elasticache Resource
+  changed_when: False
+  register: cmd_out
+  shell: "aws elasticache list-tags-for-resource --resource-name {{ elasticache_arn }}"
+
+# take command output as text and structure into tag_list object
+- set_fact:
+    tag_list: "{{ cmd_out.stdout|from_json }}"
+
+- debug:
+    var: tag_list
+    verbosity: 1
+
+# filter on structured data in when statement using filters
+- name: Tag elasticache Resource
+  register: elasticache_tags
+  when: tag_list.TagList|selectattr('Key','equalto','environment')|list|length < 1
+  shell: "aws elasticache add-tags-to-resource --resource-name {{ elasticache_arn }} --tags Key=environment,Value={{ envname }}"
+
 ```
-### template file
-```python
-es_host: "{{ elasticsearch_host }}"
-es_port: {{ elasticsearch_port }}
-type: frequency
-name: {{ item.name }}
-index: {{ item.index }}
-num_events: {{ item.num_events }}
-timeframe:
-    {{ item.timeframe | to_nice_yaml }}
-{% for fltr in item.filters %}
-filter:
-  - {{ fltr.type }}:
-        {{ fltr.content.key }}:{{ fltr.content.value }}
-{% endfor %}
-```
-### Tip
-To get a dictionary from var to template use the to_nice_yaml filter!!!
