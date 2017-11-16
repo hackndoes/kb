@@ -34,3 +34,5 @@
     path: "{{ item.path }}"
     state: absent
 ```
+
+[Delete Files](http://www.mydailytutorials.com/ansible-delete-multiple-files-directories-ansible/)
